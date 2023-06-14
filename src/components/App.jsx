@@ -8,9 +8,11 @@ function App() {
   const [notes, setNotes] = useState([]);
 
   function addNote(newNote) {
-    setNotes((prevNotes) => {
-      return [...prevNotes, newNote];
-    });
+    if (newNote.title !== "") {
+      setNotes((prevNotes) => {
+        return [...prevNotes, newNote];
+      });
+    };
   }
 
   function deleteNote(id) {
